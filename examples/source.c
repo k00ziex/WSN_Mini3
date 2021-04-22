@@ -18,7 +18,7 @@ PROCESS_THREAD(broadcast_process, ev, data)
   LOG_INFO("broadcast_process started\n");
   while (1) {
     LOG_INFO("broadcast_process broadcasting\n");
-    etimer_set(&timer, 1 * CLOCK_SECOND);
+    etimer_set(&timer, 3 * CLOCK_SECOND);
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer) );
     nullnet_buf = (uint8_t*)payload;
     nullnet_len = sizeof(payload);

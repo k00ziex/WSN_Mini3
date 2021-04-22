@@ -13,8 +13,7 @@ PROCESS_THREAD(WSN_MiniProject_3, ev, data)
 {
 	PROCESS_BEGIN();
 	LOG_INFO("STARTING PROCESS.\n");
-
-
+	
 	LOG_INFO("PROCESS DONE.\n");
 	PROCESS_END();
 }
