@@ -1,4 +1,4 @@
-CONTIKI_PROJECT = sink source middleman
+CONTIKI_PROJECT = sink source aggregator
 all: $(CONTIKI_PROJECT)
 
 CONTIKI = ../../..
