@@ -28,3 +28,28 @@ Arbejdsopgaver:
 4. Lav sink som aggregerer modtaget data og smider det ud i konsollen (så man kan proppe det i matlab)
 4. Lav source data, muligvis i matlab
 5. Lav data visualisering i matlab, samt udregning af precision, accuracy osv. 
+
+
+
+___________________________________________________________________________________
+*PROTOCOL (Source to Aggregator):*
+
+    MoteID;ID;VALUE;TIMESTAMP
+
+MoteID = ID of mote
+ID = ID of measurement, changed at every new measurement
+VALUE = Measured data value
+TIMESTAMP = Timestamp from measured data value
+
+
+*PROTOCOL (Aggregator to sink):*
+
+    AggregatorID;ID;AVERAGE;MIN;MAX;MEDIAN;#ofMeasurements
+
+AggregatorID = ID of the aggregator mote
+ID = ID of the aggregation, changed at every aggregation sent
+AVERAGE = Average of the measurements
+MIN = The minimum value out of all measurements
+MAX = The maximum value out of all measurements
+MEDIAN = The middlemost value of all measurements (sorted in ascending order)
+#ofMeasurements = The number of measurements aggregated
