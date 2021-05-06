@@ -54,3 +54,6 @@ project/plugins/project/
 *.iws
 .idea
 out
+
+/build/
+*.sky

@@ -6,21 +6,20 @@
 #define LOG_LEVEL LOG_LEVEL_DBG
 
 static char payload[] = "hello there";
+static linkaddr_t dest_addr = {{0x02,0x02,0x02,0x00,0x2,0x74,0x12,0x00}};
 
 
 void msgEventCallback(const void *data, uint16_t len, const linkaddr_t *src, const linkaddr_t *dest) {
   LOG_INFO("Received message! with len: %d \n", len);
   int i = 0;
-
   for(; i < len; i++) {
     //uint8_t c = *(uint8_t*)(data+i);
     LOG_INFO("RECEIVED: %c \n", *(char*)((uint8_t*)(data+i)));
-    
   }
   LOG_INFO("Passing msg on\n");
   nullnet_buf = (uint8_t*)payload;
   nullnet_len = sizeof(payload);
-  NETSTACK_NETWORK.output(NULL); 
+  NETSTACK_NETWORK.output(&dest_addr); 
 }
 
 /*---------------------------------------------------------------------------*/
