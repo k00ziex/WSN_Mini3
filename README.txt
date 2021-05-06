@@ -28,6 +28,8 @@ Arbejdsopgaver:
 4. Lav sink som aggregerer modtaget data og smider det ud i konsollen (så man kan proppe det i matlab)
 4. Lav source data, muligvis i matlab
 5. Lav data visualisering i matlab, samt udregning af precision, accuracy osv. 
+6. HUSK et seperat scenarie hvor der ikke er data aggregation!
+
 
 
 
