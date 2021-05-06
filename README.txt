@@ -32,7 +32,7 @@ Arbejdsopgaver:
 
 
 ___________________________________________________________________________________
-*PROTOCOL (Source to Aggregator):*
+****************PROTOCOL (Source to Aggregator):****************
 
     MoteID;ID;VALUE;TIMESTAMP
 
@@ -42,7 +42,7 @@ VALUE = Measured data value
 TIMESTAMP = Timestamp from measured data value
 
 
-*PROTOCOL (Aggregator to sink):*
+****************PROTOCOL (Aggregator to sink):****************
 
     AggregatorID;ID;AVERAGE;MIN;MAX;MEDIAN;#ofMeasurements
 
