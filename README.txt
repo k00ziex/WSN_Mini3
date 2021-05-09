@@ -23,8 +23,8 @@ Arbejdsopgaver:
 1. Lav kommunikationsprotocol mellem sources -> aggregator  og aggregators -> sink
     a. Selve data der sendes imellem
     b. IP lookup table i en header fil. (Andy og toby er godt i gang med dette)
-2. Lav source rækken
-3. Lav aggregator rækken
+2. Lav source rækken - semi done, mangler at hente data fra et array
+3. Lav aggregator rækken - Andy er i gang
 4. Lav sink som aggregerer modtaget data og smider det ud i konsollen (så man kan proppe det i matlab)
 4. Lav source data, muligvis i matlab
 5. Lav data visualisering i matlab, samt udregning af precision, accuracy osv. 
