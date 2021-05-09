@@ -1,4 +1,4 @@
-CONTIKI_PROJECT = sink source1 source2 aggmote
+CONTIKI_PROJECT = sink source aggmote1 aggmote2
 all: $(CONTIKI_PROJECT)
 
 CONTIKI = ../..
