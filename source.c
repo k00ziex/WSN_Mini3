@@ -20,12 +20,22 @@ AUTOSTART_PROCESSES(&broadcast_process);
 
 static char payload[100];
 static uint8_t payloadSize; 
+static linkaddr_t aggmote_address; 
 
 
 PROCESS_THREAD(broadcast_process, ev, data)
 {
   static struct etimer timer;
   static uint8_t packageId = 1; 
+  // Pick aggmote based on even ID.
+  if(node_id % 2 == 0) 
+  {
+    aggmote_address = dest_address_aggmote1;
+  } 
+  else 
+  {
+    aggmote_address = dest_address_aggmote2;
+  }
   PROCESS_BEGIN();
   LOG_INFO("broadcast_process started\n");
   while (1) {
@@ -60,7 +70,7 @@ PROCESS_THREAD(broadcast_process, ev, data)
     // Send payload
     nullnet_buf = (uint8_t*)payload;
     nullnet_len = payloadSize * sizeof(uint8_t);
-    NETSTACK_NETWORK.output(&dest_address_aggmote1); 
+    NETSTACK_NETWORK.output(&aggmote_address); 
     LOG_INFO("\nData sent\n");
     etimer_reset(&timer);
   }
