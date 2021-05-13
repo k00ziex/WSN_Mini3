@@ -3,6 +3,7 @@
 #include "net/netstack.h"
 #include "sys/log.h"
 #include "AggNetwork.h"
+#include "node-id.h"
 #include "stdlib.h"
 #include "net/packetbuf.h"
 #define LOG_MODULE "receiver_process"
@@ -19,6 +20,8 @@ static int recTempArr[ARRAY_SIZE] = { [0 ... (ARRAY_SIZE - 1)] = -100 };
 static uint8_t moteIdArrIndex = 0;
 static uint8_t idArrIndex = 0;
 static uint8_t recTempIndex = 0;
+
+static uint8_t packageId = 1;
 
 // INSPIRED FROM: http://www.firmcodes.com/sorting-algorithms-in-c/
 void SelectionSort(int arr[], int size)
@@ -65,12 +68,15 @@ AggData aggregateData()
 	SelectionSort(recTempArr, numberOfMeasurements);
 
 	AggData aggStruct = {
+		.AggregatorId = node_id,
+		.PackageId = packageId,
 		.Average = (float)((float)(totalValue)) / ((float)(numberOfMeasurements)),
 		.NumMeasurements = numberOfMeasurements,
 		.Max = maxValue,
 		.Min = minValue,
 		.Median = recTempArr[(numberOfMeasurements / 2)]
 	};
+	packageId++;
 	return aggStruct;
 }
 
