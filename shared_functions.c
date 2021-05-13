@@ -45,28 +45,19 @@ void PrintEnergestMeasurement(char c, int8_t txPower, int runTime) {
   } else {
     current_tx_mode = 17.4;
   }
- 
+  
+  // https://stackoverflow.com/questions/45644277/how-to-calculate-total-energy-consumption-using-cooja
   float current_rx_mode = 19.7;
   float current_cpu_active = 0.5;
   float current_cpu_idle = 0.0026;
-  // https://stackoverflow.com/questions/45644277/how-to-calculate-total-energy-consumption-using-cooja
   uint64_t current = (  txMeasurement * current_tx_mode + rxMeasurement * current_rx_mode + 
                         cpuMeasurement * current_cpu_active + lpmMeasurement * current_cpu_idle) 
                         / RTIMER_ARCH_SECOND;
   
   uint64_t charge = current * (cpuMeasurement + lpmMeasurement) / RTIMER_ARCH_SECOND;
   uint64_t power = current * 3; // 3 Volts assumption. 
-
   printf("Power used : ");
   printf("%" PRIu64 "mW\n", power);
-
-  //19,7 mA i receive mode, 3 V - det kan godt være dette lige skal undersøges nærmere da jeg var liiidt i tvivl om værdierne.
-  //float energyConsumption = (cpuMeasurement * currentConsumption * 3);
-  //float dutyCycle = (txMeasurement + rxMeasurement) / (cpuMeasurement + lpmMeasurement);
-  //printf("Energy consumption: ");
-  //PrintFloat(energyConsumption);
-  //printf("Duty cycle: ");
-  //PrintFloat(dutyCycle);
 }
 
 

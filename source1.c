@@ -56,9 +56,6 @@ PROCESS_THREAD(broadcast_process, ev, data)
   PROCESS_BEGIN();
   LOG_INFO("broadcast_process started\n");
   
-  etimer_set(&timer, 10 * CLOCK_SECOND); // wait for other motes to start up. 
-  PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer) );
-  
   while (1) {
     LOG_INFO("broadcast_process broadcasting:\n");
 
