@@ -55,7 +55,7 @@ void PrintEnergestMeasurement(char c, int8_t txPower, int runTime) {
                         / RTIMER_ARCH_SECOND;
   
   uint64_t charge = current * (cpuMeasurement + lpmMeasurement) / RTIMER_ARCH_SECOND;
-  uint64_t power = current * 3; // 3 Volts assumption. 
+  uint64_t power = current * 3; // 3 Volts assumption.  TODO: current is in mA, but 3 is Volts????? fix plz
   printf("Power used : ");
   printf("%" PRIu64 "mW\n", power);
 }
@@ -74,7 +74,7 @@ void PrintFloat(float f) {
 // INSPIRED FROM: http://www.firmcodes.com/sorting-algorithms-in-c/
 void SelectionSort(int arr[], int size)
 {
-	for (int i = 0; i < size - 1; ++i)
+	for (int i = 0; i < size - 1; i++)
 	{
 		int Imin = i;
 		for (int j = i + 1; j < size; j++)

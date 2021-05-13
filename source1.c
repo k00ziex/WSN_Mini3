@@ -59,7 +59,7 @@ PROCESS_THREAD(broadcast_process, ev, data)
   etimer_set(&timer, 10 * CLOCK_SECOND);
   PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer) );
   
-  while (1) {
+  while (tempDataIndex <= 99) {
     LOG_INFO("broadcast_process broadcasting:\n");
 
     etimer_set(&timer, 1 * CLOCK_SECOND);
@@ -76,10 +76,6 @@ PROCESS_THREAD(broadcast_process, ev, data)
     nullnet_send(&sd);
     etimer_reset(&timer);
     // End of life for our mote.
-    if(tempDataIndex >= 99) 
-    {
-      break;
-    }
   }
 
   LOG_INFO("broadcast_process ending. Spent energy is:\n");

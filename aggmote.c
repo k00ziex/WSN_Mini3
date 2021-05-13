@@ -7,12 +7,14 @@
 #include "stdlib.h"
 #include "net/packetbuf.h"
 #include "shared_functions.h"
+#include "project-conf.h"
 #define LOG_MODULE "receiver_process"
 #define LOG_LEVEL LOG_LEVEL_DBG
 #define ARRAY_SIZE 100
 #define FLAG_AGGREGATOR_END_EARLY true
 #define INVALID_TEMP_MEASUREMENT -100
-#define NO_AGGREGATION false
+
+static int tenSecsWithNoPackageRcv = 0; 
 
 struct idCollectionStruct {
 	uint8_t MoteId;
@@ -114,7 +116,8 @@ void nullnet_send_no_agg(SourceData* data)
 
 void msgEventCallback(const void* data, uint16_t len, const linkaddr_t* src, const linkaddr_t* dest)
 {
-	if (NO_AGGREGATION) {
+    tenSecsWithNoPackageRcv = 0;
+	if (NO_AGGMOTES) {
 		struct SourceData recData;
 		memcpy(&recData, data, sizeof(recData));
 		nullnet_send_no_agg(&recData);
@@ -173,15 +176,17 @@ PROCESS_THREAD(receiver_process, ev, data)
 
 	nullnet_set_input_callback(msgEventCallback);
 
-	while (1) {
+	while (tenSecsWithNoPackageRcv <= 2) {
 		etimer_set(&timer, 10 * CLOCK_SECOND);
 		PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer));
 		etimer_reset(&timer);
 
 		AggData dataToSend = aggregateData();
 		nullnet_send(&dataToSend);
+        tenSecsWithNoPackageRcv += 1;
 	}
 
 	LOG_INFO("receiver_process ending\n");
+    PrintEnergestMeasurement('t', 0, 0);
 	PROCESS_END();
 }
