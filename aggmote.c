@@ -10,6 +10,7 @@
 #define ARRAY_SIZE 100
 #define FLAG_AGGREGATOR_END_EARLY true
 #define INVALID_TEMP_MEASUREMENT -100
+#define NO_AGGREGATION false
 
 static uint8_t idArr[ARRAY_SIZE] = { 0 };
 static uint8_t moteIdArr[ARRAY_SIZE] = { 0 };
@@ -108,47 +109,64 @@ void nullnet_send(AggData* data)
 	recTempIndex = 0;
 }
 
+void nullnet_send_no_agg(SourceData* data)
+{
+	// Set ptr type
+    nullnet_buf = (uint8_t *)data;
+	nullnet_len = sizeof(SourceData);
+	// Copy data into buffer
+	memcpy(nullnet_buf, data, sizeof(SourceData));
+	NETSTACK_NETWORK.output(&dest_address_sink);
+}
+
 
 void msgEventCallback(const void* data, uint16_t len, const linkaddr_t* src, const linkaddr_t* dest)
 {
-	bool hasRecFromMote = false;
-	LOG_INFO("Received message! with len: %d \n", len);
+	if (NO_AGGREGATION) {
+		struct SourceData recData;
+		memcpy(&recData, data, sizeof(recData));
+		nullnet_send_no_agg(&recData);
+	}
+	else {
+		bool hasRecFromMote = false;
+		LOG_INFO("Received message! with len: %d \n", len);
 
-	struct SourceData test;
-	memcpy(&test, data, sizeof(test));
+		struct SourceData recData;
+		memcpy(&recData, data, sizeof(recData));
 
-	if (FLAG_AGGREGATOR_END_EARLY) { // End early if the flag is set to end early (Meaning no data will be aggregated)
-		for (uint8_t moteIdIndex = 0; moteIdIndex < ARRAY_SIZE; moteIdIndex++)
-		{
-			if (moteIdArr[moteIdIndex] == test.SourceId)
+		if (FLAG_AGGREGATOR_END_EARLY) { // End early if the flag is set to end early (Meaning no data will be aggregated)
+			for (uint8_t moteIdIndex = 0; moteIdIndex < ARRAY_SIZE; moteIdIndex++)
 			{
-				hasRecFromMote = true;
-				break;
-			}
-		}
-		if (hasRecFromMote)
-		{
-			for (uint8_t measIdIndex = 0; measIdIndex < (sizeof(idArr) / sizeof(*idArr)); measIdIndex++)
-			{
-				if (idArr[measIdIndex] == test.PackageId)
+				if (moteIdArr[moteIdIndex] == recData.SourceId)
 				{
-					return;
+					hasRecFromMote = true;
+					break;
+				}
+			}
+			if (hasRecFromMote)
+			{
+				for (uint8_t measIdIndex = 0; measIdIndex < (sizeof(idArr) / sizeof(*idArr)); measIdIndex++)
+				{
+					if (idArr[measIdIndex] == recData.PackageId)
+					{
+						return;
+					}
 				}
 			}
 		}
-	}
 
-	// If we're at the end of one of the arrays, or out of bounds, we don't add to arrays or increase indexes
-	if ((!(moteIdArrIndex >= (sizeof(moteIdArr) / sizeof(*moteIdArr)))) &&
-		(!(idArrIndex >= (sizeof(idArr) / sizeof(*idArr)))) &&
-		(!(recTempIndex >= (sizeof(recTempArr) / sizeof(*recTempArr)))))
-	{
-		moteIdArr[moteIdArrIndex] = test.SourceId;
-		moteIdArrIndex++;
-		idArr[idArrIndex] = test.PackageId;
-		idArrIndex++;
-		recTempArr[recTempIndex] = test.Value;
-		recTempIndex++;
+		// If we're at the end of one of the arrays, or out of bounds, we don't add to arrays or increase indexes
+		if ((!(moteIdArrIndex >= (sizeof(moteIdArr) / sizeof(*moteIdArr)))) &&
+			(!(idArrIndex >= (sizeof(idArr) / sizeof(*idArr)))) &&
+			(!(recTempIndex >= (sizeof(recTempArr) / sizeof(*recTempArr)))))
+		{
+			moteIdArr[moteIdArrIndex] = recData.SourceId;
+			moteIdArrIndex++;
+			idArr[idArrIndex] = recData.PackageId;
+			idArrIndex++;
+			recTempArr[recTempIndex] = recData.Value;
+			recTempIndex++;
+		}
 	}
 
 
