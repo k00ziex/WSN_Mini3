@@ -5,8 +5,8 @@
 #include "sys/energest.h"
 #include <inttypes.h> 
 
-//Char c = om der er tale om transmit reading eller receive, t for transmit
-//txPower sættes i tilfælde af der er tale om transmitting
+//Char c = 't' for transmit otherwise is receive.
+//txPower must be set to 
 //Runtime er hvorlangtid den har stået og arbejdet dette vil i bedste tilfælde være timerens værdi. 
 void PrintEnergestMeasurement(char c, int8_t txPower, int runTime) {
   energest_flush(); // kan muligvis godt være at dette skal ændres så vi udregner fra den forrige måling.
@@ -47,12 +47,12 @@ void PrintEnergestMeasurement(char c, int8_t txPower, int runTime) {
   }
 
   //19,7 mA i receive mode, 3 V - det kan godt være dette lige skal undersøges nærmere da jeg var liiidt i tvivl om værdierne.
-  float energyConsumption = (cpuMeasurement * currentConsumption * 3) / (ENERGEST_SECOND * runTime);
-  float dutyCycle = (txMeasurement + rxMeasurement) / (cpuMeasurement + lpmMeasurement);
+  float energyConsumption = (cpuMeasurement * currentConsumption * 3);
+  //float dutyCycle = (txMeasurement + rxMeasurement) / (cpuMeasurement + lpmMeasurement);
   printf("Energy consumption: ");
   PrintFloat(energyConsumption);
-  printf("Duty cycle: ");
-  PrintFloat(dutyCycle);
+  //printf("Duty cycle: ");
+  //PrintFloat(dutyCycle);
 }
 
 

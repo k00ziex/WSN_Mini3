@@ -38,10 +38,7 @@ void nullnet_send(SourceData* data)
     nullnet_len = sizeof(SourceData);
     // Copy data into buffer
     memcpy(nullnet_buf, data, sizeof(SourceData));
-    int t0 = clock_time();
     NETSTACK_NETWORK.output(&aggmote_address); 
-    int t1 = clock_time(); // Get tx power var
-    PrintEnergestMeasurement('t', 0, ((t1-t0)/CLOCK_SECOND));
 }
 
 PROCESS_THREAD(broadcast_process, ev, data)
@@ -76,6 +73,7 @@ PROCESS_THREAD(broadcast_process, ev, data)
     }
   }
 
-  LOG_INFO("broadcast_process ending\n");
+  LOG_INFO("broadcast_process ending. Spent energy is:\n");
+  PrintEnergestMeasurement('t', 0, 0);
   PROCESS_END();
 }
