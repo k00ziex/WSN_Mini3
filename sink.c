@@ -24,11 +24,11 @@ void energestMeasurement() {
   uint16_t RxMeasurement = energest_type_time(ENERGEST_TYPE_LISTEN);
 
   //19,7 mA i receive mode, 3 V - det kan godt være dette lige skal undersøges nærmere da jeg var liiidt i tvivl om værdierne.
-  unsigned float energyConsumption = (CpuMeasurement * 0,197 * 3) / ENERGEST_SECOND;
-  unsigned float dutyCycle = (TxMeasurement + RxMeasurement) / (CpuMeasurement + LpmMeasurement);
-
-  
+  float energyConsumption = (CpuMeasurement * 0.197 * 3) / ENERGEST_SECOND;
+  float dutyCycle = (TxMeasurement + RxMeasurement) / (CpuMeasurement + LpmMeasurement);
 }
+
+
 
 void msgEventCallback(const void *data, uint16_t len, const linkaddr_t *src, const linkaddr_t *dest) {
   LOG_INFO("Received message! with len: %d \n", len);
