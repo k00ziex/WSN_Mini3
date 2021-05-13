@@ -32,23 +32,23 @@ void energestMeasurement(char c, int8_t txPower, int runTime) {
 
     switch(txPower) {
       case -25:
-        currentConsumption = 0.085
+        currentConsumption = 0.085;
         break;
       case -15:
-        currentConsumption = 0.099
+        currentConsumption = 0.099;
         break;
       case -10:
-        currentConsumption = 0.11
+        currentConsumption = 0.11;
         break;
       case -5:
-        currentConsumption = 0.14
+        currentConsumption = 0.14;
         break;
       default:
-        currentConsumption = 0.174
+        currentConsumption = 0.174;
     }
 
   } else {
-    currentConsumption = 0.197
+    currentConsumption = 0.197;
   }
 
   //19,7 mA i receive mode, 3 V - det kan godt være dette lige skal undersøges nærmere da jeg var liiidt i tvivl om værdierne.
