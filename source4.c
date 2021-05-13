@@ -67,12 +67,10 @@ PROCESS_THREAD(broadcast_process, ev, data)
     uint8_t val = GetNextSourceData();
 
     // struct to send
-    struct SourceData sd = {
-      node_id,
-      packageId,
-      val
-    };
-
+    struct SourceData sd;
+    sd.SourceId = node_id;
+    sd.PackageId = packageId;
+    sd.Value = val;
     
     nullnet_send(&sd);
     

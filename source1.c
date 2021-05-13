@@ -6,11 +6,10 @@
 #include "stdio.h"
 #include "node-id.h"
 #include "net/packetbuf.h"
+#include "shared_functions.h"
 
 #define LOG_MODULE "broadcaster_process"
 #define LOG_LEVEL LOG_LEVEL_DBG
-
-#define FLAG_SOURCE_REMOVE_DUPLICATES false // Turn on source duplicate removal - only looks 1 back. 
 
 /*---------------------------------------------------------------------------*/
 PROCESS(broadcast_process, "broadcast_process");
@@ -46,6 +45,7 @@ void nullnet_send(SourceData* data)
 PROCESS_THREAD(broadcast_process, ev, data)
 {
   static struct etimer timer;
+  energestMeasurement('t',  0,  10);
   // Source 1 & 2 contacts aggmote1
   aggmote_address = dest_address_aggmote1;
   
@@ -60,11 +60,11 @@ PROCESS_THREAD(broadcast_process, ev, data)
     uint8_t val = GetNextSourceData();
 
     // struct to send
-    struct SourceData sd = {
-      node_id,
-      packageId,
-      val
-    };
+    struct SourceData sd;
+    sd.SourceId = node_id;
+    sd.PackageId = packageId;
+    sd.Value = val;
+
     if(packageId == 1) {
       NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 0);
     }

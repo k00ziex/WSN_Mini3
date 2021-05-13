@@ -9,6 +9,7 @@
 #include "stdio.h"
 #include "node-id.h"
 #include "net/packetbuf.h"
+#include "shared_functions.h"
 
 #define LOG_MODULE "broadcaster_process"
 #define LOG_LEVEL LOG_LEVEL_DBG
@@ -50,6 +51,7 @@ void nullnet_send(SourceData* data)
 PROCESS_THREAD(broadcast_process, ev, data)
 {
   static struct etimer timer;
+  energestMeasurement('t',  0,  10);
   // Pick aggmote based on even ID.
   if(node_id % 2 == 0) 
   {
@@ -70,12 +72,11 @@ PROCESS_THREAD(broadcast_process, ev, data)
     uint8_t val = GetNextSourceData();
 
     // struct to send
-    struct SourceData sd = {
-      node_id,
-      packageId,
-      val
-    };
-
+    struct SourceData sd;
+    sd.SourceId = node_id;
+    sd.PackageId = packageId;
+    sd.Value = val;
+    
     NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 0);
 
     nullnet_send(&sd);
