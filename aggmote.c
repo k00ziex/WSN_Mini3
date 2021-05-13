@@ -103,24 +103,26 @@ void resetTempArray()
 
 void nullnet_send(AggData* data)
 {
-	// Set ptr type
-	nullnet_buf = (uint8_t*)data;
-	nullnet_len = sizeof(AggData);
-	// Copy data into buffer
-	memcpy(nullnet_buf, data, sizeof(AggData));
-	NETSTACK_NETWORK.output(&dest_address_sink);
+	if (data->NumMeasurements > 0) {
+		// Set ptr type
+		nullnet_buf = (uint8_t*)data;
+		nullnet_len = sizeof(AggData);
+		// Copy data into buffer
+		memcpy(nullnet_buf, data, sizeof(AggData));
+		NETSTACK_NETWORK.output(&dest_address_sink);
 
-	// Reset everything so we're ready to send again
-	resetIdArray();
-	resetTempArray();
-	idArrIndex = 0;
-	recTempIndex = 0;
+		// Reset everything so we're ready to send again
+		resetIdArray();
+		resetTempArray();
+		idArrIndex = 0;
+		recTempIndex = 0;
+	}
 }
 
 void nullnet_send_no_agg(SourceData* data)
 {
 	// Set ptr type
-    nullnet_buf = (uint8_t *)data;
+	nullnet_buf = (uint8_t*)data;
 	nullnet_len = sizeof(SourceData);
 	// Copy data into buffer
 	memcpy(nullnet_buf, data, sizeof(SourceData));
@@ -144,9 +146,9 @@ void msgEventCallback(const void* data, uint16_t len, const linkaddr_t* src, con
 
 
 		if (FLAG_AGGREGATOR_END_EARLY) { // End early if we've already seen this data before
-			for (uint8_t idIndex = 0; idIndex < (sizeof(idArr) / sizeof(*idArr)); idIndex++) 
+			for (uint8_t idIndex = 0; idIndex < (sizeof(idArr) / sizeof(*idArr)); idIndex++)
 			{
-				if (idArr[idIndex].MoteId == recData.SourceId) 
+				if (idArr[idIndex].MoteId == recData.SourceId)
 				{
 					if (idArr[idIndex].PackageId == recData.PackageId)
 					{
@@ -158,7 +160,7 @@ void msgEventCallback(const void* data, uint16_t len, const linkaddr_t* src, con
 
 		// If we're at the end of one of the arrays, or out of bounds, we don't add to arrays or increase indexes
 		if ((!(recTempIndex >= (sizeof(recTempArr) / sizeof(*recTempArr)))) &&
-			(!(idArrIndex >= (sizeof(idArr) / sizeof(*idArr))))) 
+			(!(idArrIndex >= (sizeof(idArr) / sizeof(*idArr)))))
 		{
 			struct idCollectionStruct structToAdd = {
 				.MoteId = recData.SourceId,
