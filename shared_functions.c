@@ -70,3 +70,22 @@ void PrintFloat(float f) {
     }
     printf("%ld.%02u, \n",A, (unsigned int) fraction);
 }
+
+// INSPIRED FROM: http://www.firmcodes.com/sorting-algorithms-in-c/
+void SelectionSort(int arr[], int size)
+{
+	for (int i = 0; i < size - 1; ++i)
+	{
+		int Imin = i;
+		for (int j = i + 1; j < size; j++)
+		{
+			if (arr[j] < arr[Imin])
+			{
+				Imin = j;
+			}
+		}
+		int temp = arr[Imin];
+		arr[Imin] = arr[i];
+		arr[i] = temp;
+	}
+}
