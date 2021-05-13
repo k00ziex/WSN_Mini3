@@ -6,11 +6,10 @@
 #include "stdio.h"
 #include "node-id.h"
 #include "net/packetbuf.h"
+#include "shared_functions.h"
 
 #define LOG_MODULE "broadcaster_process"
 #define LOG_LEVEL LOG_LEVEL_DBG
-
-#define FLAG_SOURCE_REMOVE_DUPLICATES false // Turn on source duplicate removal - only looks 1 back. 
 
 /*---------------------------------------------------------------------------*/
 PROCESS(broadcast_process, "broadcast_process");
@@ -39,8 +38,10 @@ void nullnet_send(SourceData* data)
     nullnet_len = sizeof(SourceData);
     // Copy data into buffer
     memcpy(nullnet_buf, data, sizeof(SourceData));
+    int t0 = clock_time();
     NETSTACK_NETWORK.output(&aggmote_address); 
-    LOG_INFO("\nData sent\n");
+    int t1 = clock_time(); // Get tx power var
+    PrintEnergestMeasurement('t', 0, ((t1-t0)/CLOCK_SECOND));
 }
 
 PROCESS_THREAD(broadcast_process, ev, data)
@@ -48,6 +49,7 @@ PROCESS_THREAD(broadcast_process, ev, data)
   static struct etimer timer;
   // Source 1 & 2 contacts aggmote1
   aggmote_address = dest_address_aggmote1;
+  NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 0);
   
   PROCESS_BEGIN();
   LOG_INFO("broadcast_process started\n");
@@ -60,20 +62,12 @@ PROCESS_THREAD(broadcast_process, ev, data)
     uint8_t val = GetNextSourceData();
 
     // struct to send
-    struct SourceData sd = {
-      node_id,
-      packageId,
-      val
-    };
-    if(packageId == 1) {
-      NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 0);
-    }
-    int txpower; 
-    NETSTACK_RADIO.get_value(RADIO_PARAM_TXPOWER, &txpower);
-    LOG_INFO("TX POWER: %d\n", txpower);
+    struct SourceData sd;
+    sd.SourceId = node_id;
+    sd.PackageId = packageId;
+    sd.Value = val;
 
     nullnet_send(&sd);
-    NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 1);
     etimer_reset(&timer);
     // End of life for our mote.
     if(tempDataIndex >= 99) 

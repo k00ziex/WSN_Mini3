@@ -41,7 +41,6 @@ void nullnet_send(SourceData* data)
     // Copy data into buffer
     memcpy(nullnet_buf, data, sizeof(SourceData));
     NETSTACK_NETWORK.output(&aggmote_address); 
-    LOG_INFO("\nData sent\n");
 }
 
 PROCESS_THREAD(broadcast_process, ev, data)
@@ -61,12 +60,10 @@ PROCESS_THREAD(broadcast_process, ev, data)
     uint8_t val = GetNextSourceData();
 
     // struct to send
-    struct SourceData sd = {
-      node_id,
-      packageId,
-      val
-    };
-
+    struct SourceData sd;
+    sd.SourceId = node_id;
+    sd.PackageId = packageId;
+    sd.Value = val;
     
     nullnet_send(&sd);
     

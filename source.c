@@ -9,6 +9,7 @@
 #include "stdio.h"
 #include "node-id.h"
 #include "net/packetbuf.h"
+#include "shared_functions.h"
 
 #define LOG_MODULE "broadcaster_process"
 #define LOG_LEVEL LOG_LEVEL_DBG
@@ -44,7 +45,6 @@ void nullnet_send(SourceData* data)
     // Copy data into buffer
     memcpy(nullnet_buf, data, sizeof(SourceData));
     NETSTACK_NETWORK.output(&aggmote_address); 
-    LOG_INFO("\nData sent\n");
 }
 
 PROCESS_THREAD(broadcast_process, ev, data)
@@ -70,16 +70,15 @@ PROCESS_THREAD(broadcast_process, ev, data)
     uint8_t val = GetNextSourceData();
 
     // struct to send
-    struct SourceData sd = {
-      node_id,
-      packageId,
-      val
-    };
-
+    struct SourceData sd;
+    sd.SourceId = node_id;
+    sd.PackageId = packageId;
+    sd.Value = val;
+    
     NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 0);
 
     nullnet_send(&sd);
-    
+    PrintEnergestMeasurement(char c, int8_t txPower, int runTime)
     etimer_reset(&timer);
     // End of life for our mote.
     if(tempDataIndex >= 99) 
