@@ -7,6 +7,8 @@
 #include "node-id.h"
 #include "net/packetbuf.h"
 #include "shared_functions.h"
+#include "cc2420.h"
+
 
 #define LOG_MODULE "broadcaster_process"
 #define LOG_LEVEL LOG_LEVEL_DBG
@@ -38,7 +40,9 @@ void nullnet_send(SourceData* data)
     nullnet_len = sizeof(SourceData);
     // Copy data into buffer
     memcpy(nullnet_buf, data, sizeof(SourceData));
+    cc2420_on();
     NETSTACK_NETWORK.output(&aggmote_address); 
+    cc2420_off();
 }
 
 PROCESS_THREAD(broadcast_process, ev, data)
@@ -46,10 +50,15 @@ PROCESS_THREAD(broadcast_process, ev, data)
   static struct etimer timer;
   // Source 1 & 2 contacts aggmote1
   aggmote_address = dest_address_aggmote1;
+  cc2420_off();
   NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 0);
   
   PROCESS_BEGIN();
   LOG_INFO("broadcast_process started\n");
+  
+  etimer_set(&timer, 10 * CLOCK_SECOND); // wait for other motes to start up. 
+  PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer) );
+  
   while (1) {
     LOG_INFO("broadcast_process broadcasting:\n");
 

@@ -10,47 +10,61 @@
 //Runtime er hvorlangtid den har stået og arbejdet dette vil i bedste tilfælde være timerens værdi. 
 void PrintEnergestMeasurement(char c, int8_t txPower, int runTime) {
   energest_flush(); // kan muligvis godt være at dette skal ændres så vi udregner fra den forrige måling.
-  uint64_t cpuMeasurement = energest_type_time(ENERGEST_TYPE_CPU);
-  uint64_t lpmMeasurement = energest_type_time(ENERGEST_TYPE_LPM);
+  uint64_t cpuMeasurement = energest_type_time(ENERGEST_TYPE_CPU);      // We assume that Current Consumption: MCU on, Radio off 1800 µA is for this energest. 
+  uint64_t lpmMeasurement = energest_type_time(ENERGEST_TYPE_LPM);      
   uint64_t txMeasurement = energest_type_time(ENERGEST_TYPE_TRANSMIT);
   uint64_t rxMeasurement = energest_type_time(ENERGEST_TYPE_LISTEN);
 
-  printf("VALL :) %" PRIu64 "\n", cpuMeasurement);
-     printf("VALL :) %" PRIu64 "\n", lpmMeasurement);
-  printf("VALL :) %" PRIu64 "\n", txMeasurement);
-  printf("VALL :) %" PRIu64 "\n", rxMeasurement);
+  printf("CPU clocks %" PRIu64 "\n", cpuMeasurement);
+  printf("LPM clocks %" PRIu64 "\n", lpmMeasurement);
+  printf("TX  clocks %" PRIu64 "\n", txMeasurement);
+  printf("RX  clocks %" PRIu64 "\n", rxMeasurement);
  
   //printf("HEJ %d\n", cpuMeasurement);
-  float currentConsumption;
+  float current_tx_mode; // in mA
 
   if(c == 't' && (txPower >= -25 && txPower <= 0)) {
 
     switch(txPower) {
       case -25:
-        currentConsumption = 0.085;
+        current_tx_mode = 8.5;
         break;
       case -15:
-        currentConsumption = 0.099;
+        current_tx_mode = 9.9;
         break;
       case -10:
-        currentConsumption = 0.11;
+        current_tx_mode = 11.2;
         break;
       case -5:
-        currentConsumption = 0.14;
+        current_tx_mode = 13.9;
         break;
       default:
-        currentConsumption = 0.174;
+        current_tx_mode = 17.4;
     }
 
   } else {
-    currentConsumption = 0.197;
+    current_tx_mode = 17.4;
   }
+ 
+  float current_rx_mode = 19.7;
+  float current_cpu_active = 0.5;
+  float current_cpu_idle = 0.0026;
+  // https://stackoverflow.com/questions/45644277/how-to-calculate-total-energy-consumption-using-cooja
+  uint64_t current = (  txMeasurement * current_tx_mode + rxMeasurement * current_rx_mode + 
+                        cpuMeasurement * current_cpu_active + lpmMeasurement * current_cpu_idle) 
+                        / RTIMER_ARCH_SECOND;
+  
+  uint64_t charge = current * (cpuMeasurement + lpmMeasurement) / RTIMER_ARCH_SECOND;
+  uint64_t power = current * 3; // 3 Volts assumption. 
+
+  printf("Power used : ");
+  printf("%" PRIu64 "mW\n", power);
 
   //19,7 mA i receive mode, 3 V - det kan godt være dette lige skal undersøges nærmere da jeg var liiidt i tvivl om værdierne.
-  float energyConsumption = (cpuMeasurement * currentConsumption * 3);
+  //float energyConsumption = (cpuMeasurement * currentConsumption * 3);
   //float dutyCycle = (txMeasurement + rxMeasurement) / (cpuMeasurement + lpmMeasurement);
-  printf("Energy consumption: ");
-  PrintFloat(energyConsumption);
+  //printf("Energy consumption: ");
+  //PrintFloat(energyConsumption);
   //printf("Duty cycle: ");
   //PrintFloat(dutyCycle);
 }
