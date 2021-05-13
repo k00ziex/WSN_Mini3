@@ -3,6 +3,7 @@
 #include "net/netstack.h"
 #include "sys/log.h"
 #include "AggNetwork.h"
+#include "node-id.h"
 #include "stdlib.h"
 #include "net/packetbuf.h"
 #define LOG_MODULE "receiver_process"
@@ -10,14 +11,20 @@
 #define ARRAY_SIZE 100
 #define FLAG_AGGREGATOR_END_EARLY true
 #define INVALID_TEMP_MEASUREMENT -100
+#define NO_AGGREGATION false
 
-static uint8_t idArr[ARRAY_SIZE] = { 0 };
-static uint8_t moteIdArr[ARRAY_SIZE] = { 0 };
+struct idCollectionStruct {
+	uint8_t MoteId;
+	uint8_t PackageId;
+};
+
+static struct idCollectionStruct idArr[ARRAY_SIZE];
 static int recTempArr[ARRAY_SIZE] = { [0 ... (ARRAY_SIZE - 1)] = -100 };
 
-static uint8_t moteIdArrIndex = 0;
 static uint8_t idArrIndex = 0;
 static uint8_t recTempIndex = 0;
+
+static uint8_t packageId = 1;
 
 // INSPIRED FROM: http://www.firmcodes.com/sorting-algorithms-in-c/
 void SelectionSort(int arr[], int size)
@@ -64,20 +71,24 @@ AggData aggregateData()
 	SelectionSort(recTempArr, numberOfMeasurements);
 
 	AggData aggStruct = {
+		.AggregatorId = node_id,
+		.PackageId = packageId,
 		.Average = (float)((float)(totalValue)) / ((float)(numberOfMeasurements)),
 		.NumMeasurements = numberOfMeasurements,
 		.Max = maxValue,
 		.Min = minValue,
 		.Median = recTempArr[(numberOfMeasurements / 2)]
 	};
+	packageId++;
 	return aggStruct;
 }
 
-void resetArray(uint8_t arr[])
+void resetIdArray()
 {
-	for (uint8_t i = 0; i < (sizeof(arr) / sizeof(*arr)); i++)
+	for (uint8_t i = 0; i < (sizeof(idArr) / sizeof(*idArr)); i++)
 	{
-		arr[i] = 0;
+		struct idCollectionStruct newStruct;
+		idArr[i] = newStruct;
 	}
 }
 
@@ -100,55 +111,64 @@ void nullnet_send(AggData* data)
 	NETSTACK_NETWORK.output(&dest_address_sink);
 
 	// Reset everything so we're ready to send again
-	resetArray(moteIdArr);
-	resetArray(idArr);
+	resetIdArray();
 	resetTempArray();
-	moteIdArrIndex = 0;
 	idArrIndex = 0;
 	recTempIndex = 0;
+}
+
+void nullnet_send_no_agg(SourceData* data)
+{
+	// Set ptr type
+    nullnet_buf = (uint8_t *)data;
+	nullnet_len = sizeof(SourceData);
+	// Copy data into buffer
+	memcpy(nullnet_buf, data, sizeof(SourceData));
+	NETSTACK_NETWORK.output(&dest_address_sink);
 }
 
 
 void msgEventCallback(const void* data, uint16_t len, const linkaddr_t* src, const linkaddr_t* dest)
 {
-	bool hasRecFromMote = false;
-	LOG_INFO("Received message! with len: %d \n", len);
+	if (NO_AGGREGATION) {
+		struct SourceData recData;
+		memcpy(&recData, data, sizeof(recData));
+		nullnet_send_no_agg(&recData);
+	}
+	else {
+		bool hasRecFromMote = false;
+		LOG_INFO("Received message! with len: %d \n", len);
 
-	struct SourceData test;
-	memcpy(&test, data, sizeof(test));
+		struct SourceData recData;
+		memcpy(&recData, data, sizeof(recData));
 
-	if (FLAG_AGGREGATOR_END_EARLY) { // End early if the flag is set to end early (Meaning no data will be aggregated)
-		for (uint8_t moteIdIndex = 0; moteIdIndex < ARRAY_SIZE; moteIdIndex++)
-		{
-			if (moteIdArr[moteIdIndex] == test.SourceId)
+
+		if (FLAG_AGGREGATOR_END_EARLY) { // End early if we've already seen this data before
+			for (uint8_t idIndex = 0; idIndex < (sizeof(idArr) / sizeof(*idArr)); idIndex++) 
 			{
-				hasRecFromMote = true;
-				break;
-			}
-		}
-		if (hasRecFromMote)
-		{
-			for (uint8_t measIdIndex = 0; measIdIndex < (sizeof(idArr) / sizeof(*idArr)); measIdIndex++)
-			{
-				if (idArr[measIdIndex] == test.PackageId)
+				if (idArr[idIndex].MoteId == recData.SourceId) 
 				{
-					return;
+					if (idArr[idIndex].PackageId == recData.PackageId)
+					{
+						return;
+					}
 				}
 			}
 		}
-	}
 
-	// If we're at the end of one of the arrays, or out of bounds, we don't add to arrays or increase indexes
-	if ((!(moteIdArrIndex >= (sizeof(moteIdArr) / sizeof(*moteIdArr)))) &&
-		(!(idArrIndex >= (sizeof(idArr) / sizeof(*idArr)))) &&
-		(!(recTempIndex >= (sizeof(recTempArr) / sizeof(*recTempArr)))))
-	{
-		moteIdArr[moteIdArrIndex] = test.SourceId;
-		moteIdArrIndex++;
-		idArr[idArrIndex] = test.PackageId;
-		idArrIndex++;
-		recTempArr[recTempIndex] = test.Value;
-		recTempIndex++;
+		// If we're at the end of one of the arrays, or out of bounds, we don't add to arrays or increase indexes
+		if ((!(recTempIndex >= (sizeof(recTempArr) / sizeof(*recTempArr)))) &&
+			(!(idArrIndex >= (sizeof(idArr) / sizeof(*idArr))))) 
+		{
+			struct idCollectionStruct structToAdd = {
+				.MoteId = recData.SourceId,
+				.PackageId = recData.PackageId
+			};
+			idArr[idArrIndex] = structToAdd;
+			idArrIndex++;
+			recTempArr[recTempIndex] = recData.Value;
+			recTempIndex++;
+		}
 	}
 
 
