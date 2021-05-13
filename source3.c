@@ -1,6 +1,3 @@
-//**** SHARED CODE FOR ALL SOURCE MOTES -> If fix stuff do it in here. 
-// THIS IS NOT SUPPOSED TO BE USED AS A MOTE :)
-
 #include "contiki.h"
 #include "net/nullnet/nullnet.h"
 #include "net/netstack.h"
@@ -9,7 +6,6 @@
 #include "stdio.h"
 #include "node-id.h"
 #include "net/packetbuf.h"
-#include "shared_functions.h"
 
 #define LOG_MODULE "broadcaster_process"
 #define LOG_LEVEL LOG_LEVEL_DBG
@@ -21,9 +17,9 @@ PROCESS(broadcast_process, "broadcast_process");
 AUTOSTART_PROCESSES(&broadcast_process);
 /*---------------------------------------------------------------------------*/
 
-static const uint8_t tempData[] = { 26, 22, 25, 30, 20, 16, 27, 20, 24, 17, 16, 17, 28, 19, 21, 25, 28, 27, 20, 18, 25, 15, 19, 25, 24, 20, 30, 16, 26, 17, 21, 28, 20, 16, 23, 19, 17, 26, 
-                            22, 17, 16, 18, 17, 20, 30, 23, 18, 21, 25, 23, 24, 28, 21, 26, 17, 15, 20, 28, 21, 30, 24, 20, 29, 29, 28, 19, 19, 27, 26, 22, 30, 22, 30, 22, 23, 27, 
-                            21, 22, 17, 27, 24, 25, 27, 18, 28, 29, 19, 26, 20, 19, 17, 25, 23, 28, 19, 17, 21, 22, 27, 17};
+static const uint8_t tempData[] = { 15, 13, 13, 20, 17, 21, 21, 16, 15, 14, 16, 14, 16, 16, 14, 13, 16, 17, 15, 18, 16, 16, 19, 20, 19, 19, 17, 17, 18, 
+                                    12, 14, 18, 15, 19, 14, 12, 14, 17, 21, 18, 19, 17, 17, 20, 15, 16, 14, 19, 17, 15, 19, 13, 12, 17, 18, 17, 21, 18, 
+                                    17, 14, 12, 19, 13, 14, 14, 17, 17, 19, 20, 19, 21, 13, 21, 12, 14, 12, 18, 21, 17, 13, 17, 17, 13, 15, 19, 17, 13, 15, 15, 17, 12, 17, 21, 13, 19, 21, 18, 19, 15, 16};
 
 static int tempDataIndex = 0;
 static uint8_t packageId = 1; 
@@ -51,16 +47,9 @@ void nullnet_send(SourceData* data)
 PROCESS_THREAD(broadcast_process, ev, data)
 {
   static struct etimer timer;
-  energestMeasurement('t',  0,  10);
-  // Pick aggmote based on even ID.
-  if(node_id % 2 == 0) 
-  {
-    aggmote_address = dest_address_aggmote1;
-  } 
-  else 
-  {
-    aggmote_address = dest_address_aggmote2;
-  }
+  // Source 3 & 4 contacts aggmote2
+  aggmote_address = dest_address_aggmote2;
+  
   PROCESS_BEGIN();
   LOG_INFO("broadcast_process started\n");
   while (1) {
@@ -77,8 +66,6 @@ PROCESS_THREAD(broadcast_process, ev, data)
     sd.PackageId = packageId;
     sd.Value = val;
     
-    NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 0);
-
     nullnet_send(&sd);
     
     etimer_reset(&timer);

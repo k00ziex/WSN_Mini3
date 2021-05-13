@@ -1,6 +1,3 @@
-//**** SHARED CODE FOR ALL SOURCE MOTES -> If fix stuff do it in here. 
-// THIS IS NOT SUPPOSED TO BE USED AS A MOTE :)
-
 #include "contiki.h"
 #include "net/nullnet/nullnet.h"
 #include "net/netstack.h"
@@ -9,7 +6,6 @@
 #include "stdio.h"
 #include "node-id.h"
 #include "net/packetbuf.h"
-#include "shared_functions.h"
 
 #define LOG_MODULE "broadcaster_process"
 #define LOG_LEVEL LOG_LEVEL_DBG
@@ -21,9 +17,9 @@ PROCESS(broadcast_process, "broadcast_process");
 AUTOSTART_PROCESSES(&broadcast_process);
 /*---------------------------------------------------------------------------*/
 
-static const uint8_t tempData[] = { 26, 22, 25, 30, 20, 16, 27, 20, 24, 17, 16, 17, 28, 19, 21, 25, 28, 27, 20, 18, 25, 15, 19, 25, 24, 20, 30, 16, 26, 17, 21, 28, 20, 16, 23, 19, 17, 26, 
-                            22, 17, 16, 18, 17, 20, 30, 23, 18, 21, 25, 23, 24, 28, 21, 26, 17, 15, 20, 28, 21, 30, 24, 20, 29, 29, 28, 19, 19, 27, 26, 22, 30, 22, 30, 22, 23, 27, 
-                            21, 22, 17, 27, 24, 25, 27, 18, 28, 29, 19, 26, 20, 19, 17, 25, 23, 28, 19, 17, 21, 22, 27, 17};
+static const uint8_t tempData[] = { 8, 11, 11, 10, 15, 12, 15, 15, 10, 8, 8, 13, 11, 16, 11, 9, 12, 16, 13, 11, 10, 15, 16, 11, 8, 9, 13, 9, 10, 12, 11, 10, 12, 10, 
+                                    8, 13, 9, 15, 11, 10, 14, 14, 9, 9, 9, 13, 15, 12, 9, 14, 16, 9, 15, 9, 15, 15, 12, 12, 16, 8, 12, 13, 14, 10, 8, 9, 14, 16, 11, 
+                                    16, 10, 9, 11, 13, 13, 12, 10, 9, 9, 9, 14, 12, 9, 14, 9, 15, 12, 12, 9, 15, 12, 13, 11, 14, 8, 13, 15, 12, 13, 10};
 
 static int tempDataIndex = 0;
 static uint8_t packageId = 1; 
@@ -51,7 +47,6 @@ void nullnet_send(SourceData* data)
 PROCESS_THREAD(broadcast_process, ev, data)
 {
   static struct etimer timer;
-  energestMeasurement('t',  0,  10);
   // Pick aggmote based on even ID.
   if(node_id % 2 == 0) 
   {
@@ -77,8 +72,6 @@ PROCESS_THREAD(broadcast_process, ev, data)
     sd.PackageId = packageId;
     sd.Value = val;
     
-    NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 0);
-
     nullnet_send(&sd);
     
     etimer_reset(&timer);

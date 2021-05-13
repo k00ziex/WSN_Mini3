@@ -1,6 +1,3 @@
-//**** SHARED CODE FOR ALL SOURCE MOTES -> If fix stuff do it in here. 
-// THIS IS NOT SUPPOSED TO BE USED AS A MOTE :)
-
 #include "contiki.h"
 #include "net/nullnet/nullnet.h"
 #include "net/netstack.h"
@@ -14,17 +11,14 @@
 #define LOG_MODULE "broadcaster_process"
 #define LOG_LEVEL LOG_LEVEL_DBG
 
-#define FLAG_SOURCE_REMOVE_DUPLICATES false // Turn on source duplicate removal - only looks 1 back. 
-
 /*---------------------------------------------------------------------------*/
 PROCESS(broadcast_process, "broadcast_process");
 AUTOSTART_PROCESSES(&broadcast_process);
 /*---------------------------------------------------------------------------*/
 
 static const uint8_t tempData[] = { 26, 22, 25, 30, 20, 16, 27, 20, 24, 17, 16, 17, 28, 19, 21, 25, 28, 27, 20, 18, 25, 15, 19, 25, 24, 20, 30, 16, 26, 17, 21, 28, 20, 16, 23, 19, 17, 26, 
-                            22, 17, 16, 18, 17, 20, 30, 23, 18, 21, 25, 23, 24, 28, 21, 26, 17, 15, 20, 28, 21, 30, 24, 20, 29, 29, 28, 19, 19, 27, 26, 22, 30, 22, 30, 22, 23, 27, 
-                            21, 22, 17, 27, 24, 25, 27, 18, 28, 29, 19, 26, 20, 19, 17, 25, 23, 28, 19, 17, 21, 22, 27, 17};
-
+                                    22, 17, 16, 18, 17, 20, 30, 23, 18, 21, 25, 23, 24, 28, 21, 26, 17, 15, 20, 28, 21, 30, 24, 20, 29, 29, 28, 19, 19, 27, 26, 22, 30, 22, 30, 22, 23, 27, 
+                                    21, 22, 17, 27, 24, 25, 27, 18, 28, 29, 19, 26, 20, 19, 17, 25, 23, 28, 19, 17, 21, 22, 27, 17};
 static int tempDataIndex = 0;
 static uint8_t packageId = 1; 
 
@@ -52,15 +46,9 @@ PROCESS_THREAD(broadcast_process, ev, data)
 {
   static struct etimer timer;
   energestMeasurement('t',  0,  10);
-  // Pick aggmote based on even ID.
-  if(node_id % 2 == 0) 
-  {
-    aggmote_address = dest_address_aggmote1;
-  } 
-  else 
-  {
-    aggmote_address = dest_address_aggmote2;
-  }
+  // Source 1 & 2 contacts aggmote1
+  aggmote_address = dest_address_aggmote1;
+  
   PROCESS_BEGIN();
   LOG_INFO("broadcast_process started\n");
   while (1) {
@@ -76,11 +64,16 @@ PROCESS_THREAD(broadcast_process, ev, data)
     sd.SourceId = node_id;
     sd.PackageId = packageId;
     sd.Value = val;
-    
-    NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 0);
+
+    if(packageId == 1) {
+      NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 0);
+    }
+    int txpower; 
+    NETSTACK_RADIO.get_value(RADIO_PARAM_TXPOWER, &txpower);
+    LOG_INFO("TX POWER: %d\n", txpower);
 
     nullnet_send(&sd);
-    
+    NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 1);
     etimer_reset(&timer);
     // End of life for our mote.
     if(tempDataIndex >= 99) 
