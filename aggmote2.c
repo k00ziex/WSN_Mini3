@@ -2,7 +2,7 @@
 #include "net/nullnet/nullnet.h"
 #include "net/netstack.h"
 #include "sys/log.h"
-#include "addresses.h"
+#include "AggNetwork.h"
 #include "os/lib/heapmem.h"
 #define LOG_MODULE "receiver_process"
 #define LOG_LEVEL LOG_LEVEL_DBG

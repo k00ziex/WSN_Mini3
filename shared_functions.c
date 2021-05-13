@@ -43,3 +43,14 @@ void energestMeasurement(char c, int8_t txPower, int runTime) {
   float dutyCycle = (txMeasurement + rxMeasurement) / (cpuMeasurement + lpmMeasurement);
   printf("Hej\n");
 }
+
+
+void printFloat(float f) {
+    int32_t A = f;
+    float fraction = (f-A)*100;
+
+    if(fraction < 0) {
+        fraction *= (-1);
+    }
+    printf("%ld.%02u, ",A, (unsigned int) fraction);
+}
