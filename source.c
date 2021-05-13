@@ -45,13 +45,11 @@ void nullnet_send(SourceData* data)
     // Copy data into buffer
     memcpy(nullnet_buf, data, sizeof(SourceData));
     NETSTACK_NETWORK.output(&aggmote_address); 
-    LOG_INFO("\nData sent\n");
 }
 
 PROCESS_THREAD(broadcast_process, ev, data)
 {
   static struct etimer timer;
-  energestMeasurement('t',  0,  10);
   // Pick aggmote based on even ID.
   if(node_id % 2 == 0) 
   {
@@ -80,7 +78,7 @@ PROCESS_THREAD(broadcast_process, ev, data)
     NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 0);
 
     nullnet_send(&sd);
-    
+    PrintEnergestMeasurement(char c, int8_t txPower, int runTime)
     etimer_reset(&timer);
     // End of life for our mote.
     if(tempDataIndex >= 99) 

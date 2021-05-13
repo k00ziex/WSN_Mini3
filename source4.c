@@ -41,7 +41,6 @@ void nullnet_send(SourceData* data)
     // Copy data into buffer
     memcpy(nullnet_buf, data, sizeof(SourceData));
     NETSTACK_NETWORK.output(&aggmote_address); 
-    LOG_INFO("\nData sent\n");
 }
 
 PROCESS_THREAD(broadcast_process, ev, data)

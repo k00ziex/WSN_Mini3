@@ -38,16 +38,18 @@ void nullnet_send(SourceData* data)
     nullnet_len = sizeof(SourceData);
     // Copy data into buffer
     memcpy(nullnet_buf, data, sizeof(SourceData));
+    int t0 = clock_time();
     NETSTACK_NETWORK.output(&aggmote_address); 
-    LOG_INFO("\nData sent\n");
+    int t1 = clock_time(); // Get tx power var
+    PrintEnergestMeasurement('t', 0, ((t1-t0)/CLOCK_SECOND));
 }
 
 PROCESS_THREAD(broadcast_process, ev, data)
 {
   static struct etimer timer;
-  energestMeasurement('t',  0,  10);
   // Source 1 & 2 contacts aggmote1
   aggmote_address = dest_address_aggmote1;
+  NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 0);
   
   PROCESS_BEGIN();
   LOG_INFO("broadcast_process started\n");
@@ -65,15 +67,7 @@ PROCESS_THREAD(broadcast_process, ev, data)
     sd.PackageId = packageId;
     sd.Value = val;
 
-    if(packageId == 1) {
-      NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 0);
-    }
-    int txpower; 
-    NETSTACK_RADIO.get_value(RADIO_PARAM_TXPOWER, &txpower);
-    LOG_INFO("TX POWER: %d\n", txpower);
-
     nullnet_send(&sd);
-    NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, 1);
     etimer_reset(&timer);
     // End of life for our mote.
     if(tempDataIndex >= 99) 
