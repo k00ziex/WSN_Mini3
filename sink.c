@@ -164,6 +164,8 @@ void AggregateAggData()
   LOG_INFO("Max: %d\n", max);
   LOG_INFO("Median: %d\n", median);
   LOG_INFO("Average: "); PrintFloat(avg); printf("\n");
+  LOG_INFO("Num measurements: %d\n", totalMeasurements);
+
 }
 
 /*---------------------------------------------------------------------------*/

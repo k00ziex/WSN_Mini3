@@ -12,7 +12,7 @@
 
 #define LOG_MODULE "Source_1"
 #define LOG_LEVEL LOG_LEVEL_DBG
-
+#define N_PACKAGES_TO_SEND 50
 /*---------------------------------------------------------------------------*/
 PROCESS(broadcast_process, "broadcast_process");
 AUTOSTART_PROCESSES(&broadcast_process);
@@ -59,7 +59,7 @@ PROCESS_THREAD(broadcast_process, ev, data)
   etimer_set(&timer, 10 * CLOCK_SECOND);
   PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer) );
   
-  while (tempDataIndex <= 99) {
+  while (tempDataIndex <= N_PACKAGES_TO_SEND) {
     LOG_INFO("broadcast_process broadcasting:\n");
 
     etimer_set(&timer, 1 * CLOCK_SECOND);

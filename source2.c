@@ -14,6 +14,7 @@
 #define LOG_LEVEL LOG_LEVEL_DBG
 
 #define FLAG_SOURCE_REMOVE_DUPLICATES false // Turn on source duplicate removal - only looks 1 back. 
+#define N_PACKAGES_TO_SEND 50
 
 /*---------------------------------------------------------------------------*/
 PROCESS(broadcast_process, "broadcast_process");
@@ -78,7 +79,7 @@ PROCESS_THREAD(broadcast_process, ev, data)
     nullnet_send(&sd);
     etimer_reset(&timer);
     // End of life for our mote.
-    if(tempDataIndex >= 99) 
+    if(tempDataIndex >= N_PACKAGES_TO_SEND) 
     {
       break;
     }
