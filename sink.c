@@ -9,7 +9,7 @@
 #include "stdio.h"
 #include "project-conf.h"
 
-#define LOG_MODULE "receiver_process"
+#define LOG_MODULE "Sink"
 #define LOG_LEVEL LOG_LEVEL_DBG
 #define N_AGG_PACKS 21
 #define ARRAY_SIZE 600

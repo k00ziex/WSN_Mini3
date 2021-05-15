@@ -10,7 +10,7 @@
 #include "cc2420.h"
 
 
-#define LOG_MODULE "broadcaster_process"
+#define LOG_MODULE "Source_1"
 #define LOG_LEVEL LOG_LEVEL_DBG
 
 /*---------------------------------------------------------------------------*/

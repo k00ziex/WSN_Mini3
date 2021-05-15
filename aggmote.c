@@ -8,7 +8,7 @@
 #include "net/packetbuf.h"
 #include "shared_functions.h"
 #include "project-conf.h"
-#define LOG_MODULE "receiver_process"
+#define LOG_MODULE "Agg_Mote"
 #define LOG_LEVEL LOG_LEVEL_DBG
 #define ARRAY_SIZE 100
 #define FLAG_AGGREGATOR_END_EARLY true

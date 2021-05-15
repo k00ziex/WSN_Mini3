@@ -10,7 +10,7 @@
 #include "cc2420.h"
 
 
-#define LOG_MODULE "broadcaster_process"
+#define LOG_MODULE "Source_2"
 #define LOG_LEVEL LOG_LEVEL_DBG
 
 #define FLAG_SOURCE_REMOVE_DUPLICATES false // Turn on source duplicate removal - only looks 1 back. 
