@@ -59,7 +59,7 @@ PROCESS_THREAD(broadcast_process, ev, data)
   etimer_set(&timer, 10 * CLOCK_SECOND);
   PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer) );
   
-  while (tempDataIndex <= N_PACKAGES_TO_SEND) {
+  while (tempDataIndex < N_PACKAGES_TO_SEND) {
     LOG_INFO("broadcast_process broadcasting:\n");
 
     etimer_set(&timer, 1 * CLOCK_SECOND);

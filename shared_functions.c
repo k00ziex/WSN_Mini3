@@ -18,11 +18,11 @@ void PrintEnergestMeasurement(char c, int8_t txPower, int runTime) {
   printf("CPU clocks %" PRIu64 "\n", cpuMeasurement);
   printf("LPM clocks %" PRIu64 "\n", lpmMeasurement);
   printf("TX  clocks %" PRIu64 "\n", txMeasurement);
-  printf("RX  clocks %" PRIu64 "\n", rxMeasurement);
+  printf("Listen clocks %" PRIu64 "\n", rxMeasurement);
  
   //printf("HEJ %d\n", cpuMeasurement);
-  float current_tx_mode; // in mA
-
+  double current_tx_mode; // in mA
+  float voltage = 3;
   if(c == 't' && (txPower >= -25 && txPower <= 0)) {
 
     switch(txPower) {
@@ -47,17 +47,28 @@ void PrintEnergestMeasurement(char c, int8_t txPower, int runTime) {
   }
   
   // https://stackoverflow.com/questions/45644277/how-to-calculate-total-energy-consumption-using-cooja
+  // Values from datasheet
   float current_rx_mode = 19.7;
-  float current_cpu_active = 0.5;
+  float current_cpu_active = 1.8;
   float current_cpu_idle = 0.0026;
-  uint64_t current = (  txMeasurement * current_tx_mode + rxMeasurement * current_rx_mode + 
+  
+  double current = (  txMeasurement * current_tx_mode + rxMeasurement * current_rx_mode + 
                         cpuMeasurement * current_cpu_active + lpmMeasurement * current_cpu_idle) 
                         / RTIMER_ARCH_SECOND;
   
-  uint64_t charge = current * (cpuMeasurement + lpmMeasurement) / RTIMER_ARCH_SECOND;
-  uint64_t power = current * 3; // 3 Volts assumption.  TODO: current is in mA, but 3 is Volts????? fix plz
-  printf("Power used : ");
+ 
+  uint64_t power = current * voltage; 
+  printf("Power used total : ");
   printf("%" PRIu64 "mW\n", power);
+
+  printf("Power used minus listening: ");
+  current = (  txMeasurement * current_tx_mode + 
+                        cpuMeasurement * current_cpu_active + lpmMeasurement * current_cpu_idle) 
+                        / RTIMER_ARCH_SECOND;
+  power = (current) * voltage;  
+  printf("%" PRIu64 "mW\n", power);                 
+
+  printf("clock_time: %d", (uint16_t)clock_time());
 }
 
 
