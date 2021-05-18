@@ -1,0 +1,725 @@
+00:00.523	ID:2	[INFO: Main      ] Starting Contiki-NG-release/v4.6-72-gd20e6e3bf-dirty
+00:00.526	ID:2	[INFO: Main      ] - Routing: nullrouting
+00:00.528	ID:2	[INFO: Main      ] - Net: nullnet
+00:00.530	ID:2	[INFO: Main      ] - MAC: CSMA
+00:00.533	ID:2	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.537	ID:2	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.537	ID:6	[INFO: Main      ] Starting Contiki-NG-release/v4.6-72-gd20e6e3bf-dirty
+00:00.539	ID:2	[INFO: Main      ] Node ID: 2
+00:00.540	ID:6	[INFO: Main      ] - Routing: nullrouting
+00:00.542	ID:6	[INFO: Main      ] - Net: nullnet
+00:00.544	ID:2	[INFO: Main      ] Link-layer address: 0202.0200.0274.1200
+00:00.545	ID:6	[INFO: Main      ] - MAC: CSMA
+00:00.548	ID:6	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.548	ID:2	[INFO: Sky       ] CC2420 CCA threshold -45
+00:00.551	ID:2	[INFO: Agg_Mote  ] receiver_process started
+00:00.551	ID:6	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.554	ID:6	[INFO: Main      ] Node ID: 6
+00:00.559	ID:6	[INFO: Main      ] Link-layer address: 0606.0600.0674.1200
+00:00.562	ID:6	[INFO: Sky       ] CC2420 CCA threshold -45
+00:00.566	ID:6	[INFO: Source_3  ] broadcast_process started
+00:00.635	ID:4	[INFO: Main      ] Starting Contiki-NG-release/v4.6-72-gd20e6e3bf-dirty
+00:00.638	ID:4	[INFO: Main      ] - Routing: nullrouting
+00:00.640	ID:4	[INFO: Main      ] - Net: nullnet
+00:00.642	ID:4	[INFO: Main      ] - MAC: CSMA
+00:00.646	ID:4	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.649	ID:4	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.651	ID:4	[INFO: Main      ] Node ID: 4
+00:00.657	ID:4	[INFO: Main      ] Link-layer address: 0404.0400.0474.1200
+00:00.660	ID:4	[INFO: Sky       ] CC2420 CCA threshold -45
+00:00.664	ID:4	[INFO: Source_1  ] broadcast_process started
+00:00.669	ID:1	[INFO: Main      ] Starting Contiki-NG-release/v4.6-72-gd20e6e3bf-dirty
+00:00.672	ID:1	[INFO: Main      ] - Routing: nullrouting
+00:00.674	ID:1	[INFO: Main      ] - Net: nullnet
+00:00.676	ID:1	[INFO: Main      ] - MAC: CSMA
+00:00.680	ID:1	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.683	ID:1	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.685	ID:1	[INFO: Main      ] Node ID: 1
+00:00.688	ID:7	[INFO: Main      ] Starting Contiki-NG-release/v4.6-72-gd20e6e3bf-dirty
+00:00.691	ID:1	[INFO: Main      ] Link-layer address: 0101.0100.0174.1200
+00:00.691	ID:7	[INFO: Main      ] - Routing: nullrouting
+00:00.694	ID:7	[INFO: Main      ] - Net: nullnet
+00:00.694	ID:1	[INFO: Sky       ] CC2420 CCA threshold -45
+00:00.696	ID:7	[INFO: Main      ] - MAC: CSMA
+00:00.697	ID:1	[INFO: Sink      ] Sink started
+00:00.699	ID:7	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:00.703	ID:7	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:00.705	ID:7	[INFO: Main      ] Node ID: 7
+00:00.710	ID:7	[INFO: Main      ] Link-layer address: 0707.0700.0774.1200
+00:00.714	ID:7	[INFO: Sky       ] CC2420 CCA threshold -45
+00:00.717	ID:7	[INFO: Source_4  ] broadcast_process started
+00:01.002	ID:5	[INFO: Main      ] Starting Contiki-NG-release/v4.6-72-gd20e6e3bf-dirty
+00:01.005	ID:5	[INFO: Main      ] - Routing: nullrouting
+00:01.007	ID:5	[INFO: Main      ] - Net: nullnet
+00:01.009	ID:5	[INFO: Main      ] - MAC: CSMA
+00:01.012	ID:5	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:01.016	ID:5	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:01.018	ID:5	[INFO: Main      ] Node ID: 5
+00:01.024	ID:5	[INFO: Main      ] Link-layer address: 0505.0500.0574.1200
+00:01.027	ID:5	[INFO: Sky       ] CC2420 CCA threshold -45
+00:01.031	ID:5	[INFO: Source_2  ] broadcast_process started
+00:01.186	ID:3	[INFO: Main      ] Starting Contiki-NG-release/v4.6-72-gd20e6e3bf-dirty
+00:01.189	ID:3	[INFO: Main      ] - Routing: nullrouting
+00:01.191	ID:3	[INFO: Main      ] - Net: nullnet
+00:01.193	ID:3	[INFO: Main      ] - MAC: CSMA
+00:01.197	ID:3	[INFO: Main      ] - 802.15.4 PANID: 0xabcd
+00:01.200	ID:3	[INFO: Main      ] - 802.15.4 Default channel: 26
+00:01.202	ID:3	[INFO: Main      ] Node ID: 3
+00:01.208	ID:3	[INFO: Main      ] Link-layer address: 0303.0300.0374.1200
+00:01.211	ID:3	[INFO: Sky       ] CC2420 CCA threshold -45
+00:01.214	ID:3	[INFO: Agg_Mote  ] receiver_process started
+00:10.570	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:10.667	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:10.721	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:11.034	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:11.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:11.606	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:11.610	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:11.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:11.704	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:11.707	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:11.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:11.773	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:11.776	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:12.036	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:12.071	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:12.074	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:12.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:12.625	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:12.628	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:12.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:12.718	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:12.722	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:12.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:13.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:13.085	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:13.088	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:13.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:13.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:13.711	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:13.714	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:13.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:13.730	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:13.733	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:13.944	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:13.947	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:14.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:14.116	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:14.120	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:14.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:14.582	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:14.585	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:14.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:14.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:14.742	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:14.745	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:14.749	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:14.752	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:15.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:15.046	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:15.049	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:15.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:15.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:15.676	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:15.679	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:15.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:15.772	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:15.775	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:16.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:16.101	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:16.104	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:16.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:16.589	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:16.593	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:16.668	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:16.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:16.827	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:16.830	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:16.851	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:16.855	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:17.031	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:17.034	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:17.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:17.054	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:17.057	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:17.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:17.597	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:17.601	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:17.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:17.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:17.749	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:17.752	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:18.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:18.116	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:18.120	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:18.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:18.582	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:18.585	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:18.668	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:18.711	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:18.714	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:18.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:18.733	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:18.736	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:19.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:19.046	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:19.049	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:19.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:19.605	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:19.608	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:19.668	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:19.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:19.789	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:19.792	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:19.834	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:19.838	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:20.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:20.069	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:20.073	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:20.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:20.582	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:20.585	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:20.668	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:20.703	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:20.706	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:20.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:20.733	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:20.736	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:21.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:21.046	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:21.049	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:21.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:21.670	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:21.675	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:21.679	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:21.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:21.772	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:21.775	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:21.984	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:21.987	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:22.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:22.140	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:22.143	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:22.312	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:22.315	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:22.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:22.582	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:22.585	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:22.668	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:22.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:22.742	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:22.745	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:22.787	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:22.791	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:23.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:23.043	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:23.047	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:23.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:23.579	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:23.582	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:23.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:23.718	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:23.722	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:23.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:23.756	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:23.759	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:24.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:24.054	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:24.057	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:24.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:24.597	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:24.601	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:24.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:24.677	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:24.680	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:24.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:24.733	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:24.736	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:25.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:25.116	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:25.120	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:25.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:25.589	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:25.593	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:25.668	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:25.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:25.756	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:25.759	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:26.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:26.085	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:26.088	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:26.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:26.582	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:26.585	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:26.668	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:26.718	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:26.722	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:26.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:26.737	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:26.741	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:26.953	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:26.956	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:27.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:27.171	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:27.175	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:27.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:27.597	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:27.601	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:27.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:27.703	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:27.706	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:27.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:27.749	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:27.752	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:28.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:28.074	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:28.077	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:28.572	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:28.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:28.677	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:28.680	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:28.714	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:28.718	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:28.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:28.764	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:28.768	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:29.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:29.054	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:29.057	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:29.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:29.636	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:29.640	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:29.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:29.687	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:29.690	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:29.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:29.827	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:29.830	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:30.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:30.054	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:30.057	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:30.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:30.629	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:30.632	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:30.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:30.710	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:30.714	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:30.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:30.772	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:30.775	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:31.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:31.078	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:31.081	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:31.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:31.582	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:31.585	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:31.668	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:31.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:31.772	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:31.775	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:31.805	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:31.808	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:32.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:32.046	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:32.049	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:32.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:32.582	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:32.585	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:32.668	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:32.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:32.921	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:32.925	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:32.952	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:32.955	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:33.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:33.085	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:33.088	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:33.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:33.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:33.695	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:33.699	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:33.714	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:33.718	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:33.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:33.772	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:33.775	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:34.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:34.046	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:34.049	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:34.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:34.579	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:34.582	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:34.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:34.711	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:34.714	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:34.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:34.819	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:34.822	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:35.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:35.163	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:35.167	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:35.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:35.579	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:35.582	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:35.668	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:35.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:35.730	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:35.733	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:36.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:36.054	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:36.057	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:36.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:36.628	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:36.632	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:36.668	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:36.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:36.772	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:36.775	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:37.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:37.062	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:37.065	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:37.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:37.668	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:37.672	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:37.675	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:37.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:37.787	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:37.791	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:38.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:38.054	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:38.057	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:38.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:38.629	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:38.632	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:38.668	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:38.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:38.811	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:38.815	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:38.820	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:38.824	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:39.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:39.066	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:39.070	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:39.093	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:39.097	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:39.137	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:39.140	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:39.363	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:39.367	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:39.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:39.597	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:39.601	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:39.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:39.703	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:39.706	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:39.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:39.772	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:39.775	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:40.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:40.078	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:40.081	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:40.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:40.613	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:40.617	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:40.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:40.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:40.756	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:40.759	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:41.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:41.051	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:41.054	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:41.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:41.579	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:41.582	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:41.668	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:41.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:41.772	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:41.773	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:41.775	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:41.777	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:41.828	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:41.831	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:42.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:42.043	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:42.047	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:42.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:42.621	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:42.624	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:42.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:42.718	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:42.722	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:42.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:42.803	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:42.806	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:43.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:43.054	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:43.057	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:43.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:43.582	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:43.585	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:43.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:43.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:43.765	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:43.769	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:43.874	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:43.877	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:44.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:44.062	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:44.065	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:44.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:44.597	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:44.601	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:44.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:44.711	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:44.714	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:44.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:44.780	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:44.783	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:45.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:45.062	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:45.065	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:45.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:45.660	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:45.663	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:45.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:45.695	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:45.699	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:45.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:45.764	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:45.768	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:46.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:46.043	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:46.047	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:46.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:46.613	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:46.617	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:46.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:46.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:46.789	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:46.792	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:46.842	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:46.846	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:47.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:47.078	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:47.081	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:47.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:47.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:47.691	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:47.695	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:47.703	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:47.706	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:47.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:47.756	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:47.759	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:48.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:48.163	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:48.167	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:48.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:48.597	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:48.601	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:48.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:48.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:48.758	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:48.761	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:48.764	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:48.767	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:49.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:49.054	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:49.057	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:49.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:49.636	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:49.640	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:49.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:49.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:49.740	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:49.744	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:50.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:50.105	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:50.108	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:50.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:50.668	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:50.680	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:50.683	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:50.703	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:50.706	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:50.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:50.795	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:50.799	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:51.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:51.085	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:51.088	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:51.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:51.644	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:51.647	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:51.668	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:51.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:51.733	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:51.736	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:52.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:52.054	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:52.057	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:52.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:52.621	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:52.624	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:52.668	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:52.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:52.742	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:52.745	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:52.850	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:52.853	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:52.945	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:52.949	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:53.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:53.066	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:53.070	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:53.124	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:53.128	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:53.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:53.613	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:53.617	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:53.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:53.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:53.742	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:53.745	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:53.772	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:53.775	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:54.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:54.046	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:54.049	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:54.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:54.605	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:54.608	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:54.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:54.687	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:54.690	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:54.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:54.772	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:54.775	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:55.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:55.043	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:55.047	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:55.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:55.589	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:55.593	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:55.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:55.695	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:55.699	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:55.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:55.764	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:55.768	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:56.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:56.093	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:56.097	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:56.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:56.628	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:56.632	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:56.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:56.711	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:56.714	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:56.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:56.756	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:56.759	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:57.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:57.140	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:57.143	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:57.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:57.652	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:57.655	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:57.668	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:57.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:57.749	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:57.752	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:57.921	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:57.925	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:58.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:58.093	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:58.097	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:58.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:58.667	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:58.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:58.671	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:58.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:58.730	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:58.734	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:58.734	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:58.737	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:59.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+00:59.093	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:59.096	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+00:59.571	ID:6	[INFO: Source_3  ] broadcast_process broadcasting:
+00:59.613	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:59.617	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+00:59.669	ID:4	[INFO: Source_1  ] broadcast_process broadcasting:
+00:59.722	ID:7	[INFO: Source_4  ] broadcast_process broadcasting:
+00:59.748	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+00:59.752	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+01:00.035	ID:5	[INFO: Source_2  ] broadcast_process broadcasting:
+01:00.054	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+01:00.057	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+01:00.572	ID:6	[INFO: Source_3  ] broadcast_process ending. Spent energy is:
+01:00.580	ID:6	CPU clocks 148149
+01:00.589	ID:6	LPM clocks 1820683
+01:00.596	ID:6	TX  clocks 11634
+01:00.602	ID:6	Listen clocks 3770
+01:00.610	ID:6	Power used total : 50mW
+01:00.616	ID:6	Power used minus listening: 43mW
+01:00.664	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+01:00.668	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+01:00.669	ID:4	[INFO: Source_1  ] broadcast_process ending. Spent energy is:
+01:00.677	ID:4	CPU clocks 161508
+01:00.686	ID:4	LPM clocks 1807311
+01:00.693	ID:4	TX  clocks 10799
+01:00.699	ID:4	Listen clocks 3485
+01:00.707	ID:4	Power used total : 50mW
+01:00.713	ID:4	Power used minus listening: 44mW
+01:00.723	ID:7	[INFO: Source_4  ] broadcast_process ending. Spent energy is:
+01:00.731	ID:7	CPU clocks 146030
+01:00.740	ID:7	LPM clocks 1822802
+01:00.747	ID:7	TX  clocks 11771
+01:00.753	ID:7	Listen clocks 3808
+01:00.761	ID:7	Power used total : 50mW
+01:00.767	ID:7	Power used minus listening: 43mW
+01:00.777	ID:3	[INFO: Agg_Mote  ] Received message! with len: 4 
+01:00.780	ID:3	[INFO: Agg_Mote  ] Finished receiving message.
+01:00.867	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+01:00.870	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+01:00.968	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+01:00.972	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+01:01.036	ID:5	[INFO: Source_2  ] broadcast_process ending. Spent energy is:
+01:01.044	ID:5	CPU clocks 146551
+01:01.054	ID:5	LPM clocks 1822281
+01:01.060	ID:5	TX  clocks 11772
+01:01.066	ID:5	Listen clocks 3781
+01:01.074	ID:5	Power used total : 50mW
+01:01.080	ID:5	Power used minus listening: 43mW
+01:01.116	ID:2	[INFO: Agg_Mote  ] Received message! with len: 4 
+01:01.120	ID:2	[INFO: Agg_Mote  ] Finished receiving message.
+01:21.212	ID:3	[INFO: Agg_Mote  ] receiver_process ending
+01:21.220	ID:3	CPU clocks 149933
+01:21.229	ID:3	LPM clocks 2473931
+01:21.234	ID:3	TX  clocks 692
+01:21.243	ID:3	Listen clocks 2621727
+01:21.254	ID:3	Power used total : 4754mW
+01:21.260	ID:3	Power used minus listening: 26mW
+01:30.549	ID:2	[INFO: Agg_Mote  ] receiver_process ending
+01:30.557	ID:2	CPU clocks 166679
+01:30.566	ID:2	LPM clocks 2784865
+01:30.572	ID:2	TX  clocks 1709
+01:30.581	ID:2	Listen clocks 2948333
+01:30.592	ID:2	Power used total : 5348mW
+01:30.598	ID:2	Power used minus listening: 30mW
+01:30.695	ID:1	[INFO: Sink      ] AGGMOTES SCENARIO
+01:30.698	ID:1	[INFO: Sink      ] Sink aggregation results:
+01:30.710	ID:1	[INFO: Sink      ] Min: 8
+01:30.712	ID:1	[INFO: Sink      ] Max: 30
+01:30.714	ID:1	[INFO: Sink      ] Median: 20
+01:30.718	ID:1	[INFO: Sink      ] Average: 16.81, 
+01:30.718	ID:1	
+01:30.721	ID:1	[INFO: Sink      ] Num measurements: 159
+01:30.729	ID:1	CPU clocks 119549
+01:30.739	ID:1	LPM clocks 2832574
+01:30.741	ID:1	TX  clocks 0
+01:30.750	ID:1	Listen clocks 2950998
+01:30.760	ID:1	Power used total : 5342mW
+01:30.766	ID:1	Power used minus listening: 20mW
+01:30.771	ID:1	clock_time: 11537[INFO: Sink      ] receiver_process ending
