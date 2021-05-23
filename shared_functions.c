@@ -20,7 +20,6 @@ void PrintEnergestMeasurement(char c, int8_t txPower, int runTime) {
   printf("TX  clocks %" PRIu64 "\n", txMeasurement);
   printf("Listen clocks %" PRIu64 "\n", rxMeasurement);
  
-  //printf("HEJ %d\n", cpuMeasurement);
   double current_tx_mode; // in mA
   float voltage = 3;
   if(c == 't' && (txPower >= -25 && txPower <= 0)) {
@@ -56,8 +55,8 @@ void PrintEnergestMeasurement(char c, int8_t txPower, int runTime) {
                         cpuMeasurement * current_cpu_active + lpmMeasurement * current_cpu_idle) 
                         / RTIMER_ARCH_SECOND;
   
- 
   uint64_t power = current * voltage; 
+
   printf("Power used total : ");
   printf("%" PRIu64 "mW\n", power);
 
@@ -67,7 +66,6 @@ void PrintEnergestMeasurement(char c, int8_t txPower, int runTime) {
                         / RTIMER_ARCH_SECOND;
   power = (current) * voltage;  
   printf("%" PRIu64 "mW\n", power);                 
-
   printf("clock_time: %d", (uint16_t)clock_time());
 }
 

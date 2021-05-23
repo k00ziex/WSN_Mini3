@@ -10,7 +10,7 @@
 #include "project-conf.h"
 #define LOG_MODULE "Agg_Mote"
 #define LOG_LEVEL LOG_LEVEL_DBG
-#define ARRAY_SIZE 100
+#define ARRAY_SIZE 200
 #define FLAG_AGGREGATOR_END_EARLY true
 #define INVALID_TEMP_MEASUREMENT -100
 

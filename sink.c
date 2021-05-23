@@ -12,7 +12,7 @@
 #define LOG_MODULE "Sink"
 #define LOG_LEVEL LOG_LEVEL_DBG
 #define N_AGG_PACKS 21
-#define ARRAY_SIZE 600
+#define ARRAY_SIZE 1000
 #define INVALID_TEMP_MEASUREMENT -100
 #define FLAG_AGGREGATOR_END_EARLY false // Sink cannot take end early because it needs to check all received ids and package ids, too big a task.
 
